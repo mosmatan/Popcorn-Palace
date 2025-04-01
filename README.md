@@ -34,6 +34,7 @@ cd popcorn-palace
 Use the provided `compose.yml` to start the app and the PostgreSQL database:
 
 ```
+docker compose build
 docker compose up --build
 ```
 
