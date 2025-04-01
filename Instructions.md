@@ -25,7 +25,7 @@ To run both the application and the PostgreSQL database using Docker:
 ### **1. Clone the Repository**
 
 ```
-git clone <your-repository-url>
+git clone https://github.com/mosmatan/Popcorn-Palace
 cd popcorn-palace
 ```
 
