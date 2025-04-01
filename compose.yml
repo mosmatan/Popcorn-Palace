@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: popcorn-palace
+      POSTGRES_PASSWORD: popcorn-palace
+      POSTGRES_DB: popcorn-palace
+    ports:
+      - "5432:5432"
+
+  app:
+    image: popcorn-palace:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/popcorn-palace
+      SPRING_DATASOURCE_USERNAME: popcorn-palace
+      SPRING_DATASOURCE_PASSWORD: popcorn-palace
+    ports:
+      - "8080:8080"
